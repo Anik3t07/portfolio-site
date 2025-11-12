@@ -1,0 +1,145 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Landing</title>
+    <meta name="description" content="Simple responsive landing page: hero, features, CTA." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="#" class="logo">ANi</a>
+        <nav class="main-nav" aria-label="Primary">
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn-primary header-cta" href="#contact">Get Started</a>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-content">
+            <h1>Hi, I'm Aniket Bhattacharya</h1>
+            <p class="lead">I build clean, responsive web experiences with HTML, CSS & JS.</p>
+
+            <div class="socials">
+              <a href="https://github.com/yourusername" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://linkedin.com/in/yourusername" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+              <a href="https://twitter.com/yourusername" target="_blank">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+            </div>
+
+          </div>
+
+          <figure class="hero-media">
+            <img src="./hero.img" alt="Developer workspace" width="500px" height="400px">
+          </figure>
+        </div>
+      </section>
+
+
+      <section id="features" class="features">
+        <div class="container">
+          <h2 class="section-title">What you'll get</h2>
+          <div class="features-grid">
+            <article class="feature">
+              <h3>Responsive by default</h3>
+              <p>Mobile-first styles and sensible breakpoints so your site looks great on any device.</p>
+            </article>
+            <article class="feature">
+              <h3>Accessible markup</h3>
+              <p>Semantic elements, good focus states, and keyboard-friendly interactions.</p>
+            </article>
+            <article class="feature">
+              <h3>Easy to customize</h3>
+              <p>CSS variables for quick theming and a clear structure to extend from.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="pricing">
+        <div class="container">
+          <h2 class="section-title">Pricing</h2>
+          <div class="pricing-cards">
+            <div class="card">
+              <h3>Starter</h3>
+              <p class="price">Free</p>
+              <ul>
+                <li>Single page</li>
+                <li>Basic support</li>
+              </ul>
+              <a class="btn btn-ghost" href="#contact">Choose</a>
+            </div>
+            <div class="card featured">
+              <h3>Pro</h3>
+              <p class="price">$12/mo</p>
+              <ul>
+                <li>Custom domains</li>
+                <li>Email support</li>
+              </ul>
+              <a class="btn btn-primary" href="#contact">Choose</a>
+            </div>
+            <div class="card">
+              <h3>Enterprise</h3>
+              <p class="price">Contact</p>
+              <ul>
+                <li>Team seats</li>
+                <li>Priority support</li>
+              </ul>
+              <a class="btn btn-ghost" href="#contact">Contact</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="container">
+          <h2 class="section-title">Get in touch</h2>
+          <form class="contact-form" action="#" method="post" novalidate>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <button class="btn btn-primary" type="submit">Send</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year">2025</span> Acme. All rights reserved.</p>
+        <nav aria-label="Footer">
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
+
+
