@@ -44,7 +44,7 @@ It features a hero section, about section, pricing (as a sample component), and 
 
 ---
 
-## 🔗 Live Demo
+
 
 👉 [View on GitHub Pages](https://yourusername.github.io/your-repo-name/)
 
