@@ -38,8 +38,8 @@ It features a hero section, about section, pricing (as a sample component), and 
 
 ## 📸 Preview
 
-*(You can replace this with a screenshot of your live site)*  
-![Portfolio Screenshot](https://via.placeholder.com/1000x600?text=Portfolio+Preview)
+<img width="1920" height="2362" alt="screencapture-127-0-0-1-5500-Simple-Landing-Page-index-html-2025-11-12-22_21_59" src="https://github.com/user-attachments/assets/ed41c5a1-ddae-4c2c-b78f-1030c734be29" />
+*
 
 ---
 
