@@ -1,145 +1,206 @@
 <!-- index.html -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Simple Landing</title>
-    <meta name="description" content="Simple responsive landing page: hero, features, CTA." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aniket Bhattacharya — Web Developer</title>
+<meta name="description" content="Aniket Bhattacharya — freelance web developer building clean, responsive sites with HTML, CSS & JS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF8;
+    --bg-dim:#F0F0EC;
+    --ink:#1D2321;
+    --accent:#3E6AE1;
+    --accent-dim:#EAEFFC;
+    --line:#DEDED6;
+    --muted:#5C6660;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg); color:var(--ink); font-family:'Inter',sans-serif; line-height:1.6;}
+  .display{font-family:'Space Grotesk',sans-serif;}
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{outline:3px solid var(--accent); outline-offset:3px;}
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important;} }
+  .wrap{max-width:960px; margin:0 auto; padding:0 28px;}
+  img{max-width:100%; display:block;}
 
-    <header class="site-header">
-      <div class="container header-inner">
-        <a href="#" class="logo">ANi</a>
-        <nav class="main-nav" aria-label="Primary">
-          <ul>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#pricing">Pricing</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <a class="btn btn-primary header-cta" href="#contact">Get Started</a>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu">☰</button>
+  nav{position:sticky; top:0; z-index:50; background:var(--bg); border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:70px;}
+  .brand{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:17px;}
+  .navlinks{display:flex; gap:28px; font-size:14px; font-weight:500;}
+  .navlinks a{text-decoration:none; color:var(--muted);}
+  .navlinks a:hover{color:var(--ink);}
+  .nav-cta{background:var(--ink); color:var(--bg); text-decoration:none; padding:9px 18px; border-radius:6px; font-size:14px; font-weight:600;}
+  .nav-cta:hover{background:var(--accent);}
+  @media (max-width:640px){ .navlinks{display:none;} }
+
+  .hero{padding:76px 0 56px;}
+  .hero-grid{max-width:640px;}
+  .hero h1{font-size:clamp(36px,5.5vw,54px); line-height:1.1; margin-bottom:16px;}
+  .hero p.sub{font-size:17px; color:var(--muted); max-width:46ch; margin-bottom:26px;}
+  .hero-links{display:flex; gap:12px; flex-wrap:wrap;}
+  .btn-primary{background:var(--ink); color:var(--bg); text-decoration:none; padding:13px 22px; border-radius:6px; font-weight:600; font-size:14.5px; display:inline-block;}
+  .btn-primary:hover{background:var(--accent);}
+  .btn-secondary{text-decoration:none; padding:13px 22px; border-radius:6px; font-weight:600; font-size:14.5px; border:1px solid var(--line); display:inline-block;}
+  .btn-secondary:hover{background:var(--bg-dim);}
+  .hero-photo{border-radius:10px; overflow:hidden; border:1px solid var(--line);}
+
+  .section{padding:60px 0; border-top:1px solid var(--line);}
+  .section-label{font-family:'Space Grotesk',sans-serif; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--accent); margin-bottom:8px; font-weight:600;}
+  .section h2{font-family:'Space Grotesk',sans-serif; font-size:clamp(24px,3.5vw,32px); margin-bottom:18px;}
+  .section p.lead{color:var(--muted); max-width:60ch; margin-bottom:28px; font-size:15.5px;}
+
+  .feature-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  @media (max-width:720px){ .feature-grid{grid-template-columns:1fr;} }
+  .feature-card{border:1px solid var(--line); border-radius:10px; padding:22px; background:#fff;}
+  .feature-card h3{font-family:'Space Grotesk',sans-serif; font-size:16.5px; margin-bottom:8px;}
+  .feature-card p{font-size:14px; color:var(--muted);}
+
+  .service-list{border:1px solid var(--line); border-radius:10px; overflow:hidden;}
+  .service-row{padding:20px 22px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap;}
+  .service-row:last-child{border-bottom:none;}
+  .service-row:nth-child(odd){background:var(--bg-dim);}
+  .service-row h3{font-family:'Space Grotesk',sans-serif; font-size:16.5px; margin-bottom:4px;}
+  .service-row p{font-size:13.5px; color:var(--muted);}
+  .service-note{font-size:13px; color:var(--muted); margin-top:16px;}
+
+  .project-card{border:1px solid var(--line); border-radius:10px; overflow:hidden; background:#fff;}
+  .project-top{padding:24px; display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; align-items:flex-start;}
+  .project-top h3{font-family:'Space Grotesk',sans-serif; font-size:19px; margin-bottom:6px;}
+  .project-top p{color:var(--muted); font-size:14.5px; max-width:50ch;}
+  .project-link{text-decoration:none; color:var(--accent); font-weight:600; font-size:14.5px; white-space:nowrap;}
+  .project-link:hover{text-decoration:underline;}
+  .project-tag{display:inline-block; font-size:11px; background:var(--accent-dim); color:var(--accent); padding:4px 9px; border-radius:4px; margin-top:12px; font-weight:600;}
+
+  .contact-box{background:var(--ink); color:var(--bg); border-radius:12px; padding:44px 32px; text-align:center;}
+  .contact-box h2{font-family:'Space Grotesk',sans-serif; font-size:clamp(24px,3.5vw,30px); margin-bottom:10px;}
+  .contact-box p{color:#B9C2BC; max-width:48ch; margin:0 auto 22px; font-size:15px;}
+  .contact-box .btn-primary{background:var(--accent); color:#fff;}
+  .contact-box .btn-primary:hover{background:#5580f0;}
+
+  footer{padding:32px 0;}
+  footer .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; font-size:13px; color:var(--muted);}
+  footer a{text-decoration:none;}
+  footer a:hover{color:var(--ink);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">Aniket Bhattacharya</div>
+    <div class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="mailto:aniket07bhattacharya@gmail.com" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 class="display">Hi, I'm Aniket Bhattacharya.</h1>
+      <p class="sub">I build clean, responsive web experiences with HTML, CSS &amp; JavaScript — currently taking on small freelance projects.</p>
+      <div class="hero-links">
+        <a href="mailto:aniket07bhattacharya@gmail.com" class="btn-primary">Email me</a>
+        <a href="https://github.com/Anik3t07" class="btn-secondary">GitHub</a>
       </div>
-    </header>
+    </div>
+  </div>
+</section>
 
-    <main>
-      <section class="hero">
-        <div class="container hero-inner">
-          <div class="hero-content">
-            <h1>Hi, I'm Aniket Bhattacharya</h1>
-            <p class="lead">I build clean, responsive web experiences with HTML, CSS & JS.</p>
-
-            <div class="socials">
-              <a href="https://github.com/yourusername" target="_blank">
-                <i class="fa-brands fa-github"></i>
-              </a>
-              <a href="https://linkedin.com/in/yourusername" target="_blank">
-                <i class="fa-brands fa-linkedin"></i>
-              </a>
-              <a href="https://twitter.com/yourusername" target="_blank">
-                <i class="fa-brands fa-x-twitter"></i>
-              </a>
-            </div>
-
-          </div>
-
-          <figure class="hero-media">
-            <img src="./hero.img" alt="Developer workspace" width="500px" height="400px">
-          </figure>
-        </div>
-      </section>
-
-
-      <section id="features" class="features">
-        <div class="container">
-          <h2 class="section-title">What you'll get</h2>
-          <div class="features-grid">
-            <article class="feature">
-              <h3>Responsive by default</h3>
-              <p>Mobile-first styles and sensible breakpoints so your site looks great on any device.</p>
-            </article>
-            <article class="feature">
-              <h3>Accessible markup</h3>
-              <p>Semantic elements, good focus states, and keyboard-friendly interactions.</p>
-            </article>
-            <article class="feature">
-              <h3>Easy to customize</h3>
-              <p>CSS variables for quick theming and a clear structure to extend from.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section id="pricing" class="pricing">
-        <div class="container">
-          <h2 class="section-title">Pricing</h2>
-          <div class="pricing-cards">
-            <div class="card">
-              <h3>Starter</h3>
-              <p class="price">Free</p>
-              <ul>
-                <li>Single page</li>
-                <li>Basic support</li>
-              </ul>
-              <a class="btn btn-ghost" href="#contact">Choose</a>
-            </div>
-            <div class="card featured">
-              <h3>Pro</h3>
-              <p class="price">$12/mo</p>
-              <ul>
-                <li>Custom domains</li>
-                <li>Email support</li>
-              </ul>
-              <a class="btn btn-primary" href="#contact">Choose</a>
-            </div>
-            <div class="card">
-              <h3>Enterprise</h3>
-              <p class="price">Contact</p>
-              <ul>
-                <li>Team seats</li>
-                <li>Priority support</li>
-              </ul>
-              <a class="btn btn-ghost" href="#contact">Contact</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" class="contact">
-        <div class="container">
-          <h2 class="section-title">Get in touch</h2>
-          <form class="contact-form" action="#" method="post" novalidate>
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required>
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-
-            <button class="btn btn-primary" type="submit">Send</button>
-          </form>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <p>© <span id="year">2025</span> Acme. All rights reserved.</p>
-        <nav aria-label="Footer">
-          <ul>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-          </ul>
-        </nav>
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-label">What you'll get</div>
+    <h2>Built properly, not just quickly</h2>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <h3>Responsive by default</h3>
+        <p>Mobile-first styles and sensible breakpoints so your site looks right on any device.</p>
       </div>
-    </footer>
-  </body>
+      <div class="feature-card">
+        <h3>Accessible markup</h3>
+        <p>Semantic HTML, visible focus states, and keyboard-friendly interactions.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Easy to maintain</h3>
+        <p>Clean, organized code so future changes don't mean starting over.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section-label">Work</div>
+    <h2>Projects</h2>
+    <p class="lead">I'm early in my freelance journey, so here's a concept piece built to show real design and build quality.</p>
+    <div class="project-card">
+      <div class="project-top">
+        <div>
+          <h3>Anchor Cycle Co.</h3>
+          <p>A landing page concept for a neighborhood bike repair shop — pricing, service process, and a booking call-to-action.</p>
+          <span class="project-tag">CONCEPT PROJECT</span>
+        </div>
+        <a href="./anchor-cycle.html" class="project-link">View project →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section-label">Services</div>
+    <h2>What I can build for you</h2>
+    <div class="service-list">
+      <div class="service-row">
+        <div>
+          <h3>Landing pages</h3>
+          <p>A single, polished page for your business, product, or personal brand.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div>
+          <h3>Small site fixes</h3>
+          <p>Layout issues, broken responsiveness, styling touch-ups on an existing site.</p>
+        </div>
+      </div>
+      <div class="service-row">
+        <div>
+          <h3>Simple interactive features</h3>
+          <p>Forms, toggles, calculators — small JS-powered pieces that make a page do something.</p>
+        </div>
+      </div>
+    </div>
+    <p class="service-note">No fixed pricing tiers — every project is scoped and quoted honestly based on what it actually needs. Get in touch and I'll give you a straight answer.</p>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2 class="display">Have a small site that needs building or fixing?</h2>
+      <p>Tell me what you need — I'll give you a clear answer on scope, timeline, and cost.</p>
+      <a href="mailto:aniket07bhattacharya@gmail.com" class="btn-primary">aniket07bhattacharya@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Aniket Bhattacharya</span>
+    <a href="https://github.com/Anik3t07">github.com/Anik3t07</a>
+  </div>
+</footer>
+
+</body>
 </html>
+
 
 
