@@ -1,29 +1,30 @@
-# 🌐 My Portfolio Landing Page
+# 🌐 Aniket Bhattacharya — Portfolio
 
-A simple, responsive **personal portfolio landing page** built using **HTML & CSS**.  
-It features a hero section, about section, pricing (as a sample component), and a contact form — all designed to be clean, accessible, and mobile-friendly.
+A simple, responsive personal portfolio site built with HTML & CSS.
+It features a hero intro, a "what you'll get" section, a real project sample, a services overview, and a working contact link.
+
+👉 **[View live site](https://anik3t07.github.io/portfolio-site/)**
 
 ---
 
 ## 🚀 Features
 
 - Fully responsive layout (mobile-first)
-- Clean hero section with CTA and image
+- Clean hero section with a clear call to action
 - Accessible semantic HTML structure
-- Custom color gradient background
-- Contact form (non-functional placeholder)
-- Font Awesome social icons
-- Easy to extend for future sections (Projects, About, etc.)
+- Real project sample (Anchor Cycle Co. — a landing page concept)
+- Services section instead of generic pricing tiers
+- Working contact via direct email link
 
 ---
 
 ## 🧠 What I Learned
 
-- Structuring semantic HTML for readability and accessibility  
-- Using Flexbox and Grid for layout  
-- Creating gradients and subtle shadows in CSS  
-- Handling responsive design with media queries  
-- Hosting static websites on GitHub Pages  
+- Structuring semantic HTML for readability and accessibility
+- Using Flexbox and Grid for layout
+- Handling responsive design with media queries
+- Hosting static websites on GitHub Pages
+- Writing site copy that's honest instead of templated
 
 ---
 
@@ -31,23 +32,13 @@ It features a hero section, about section, pricing (as a sample component), and 
 
 - **HTML5**
 - **CSS3**
-- **Font Awesome** (for icons)
-- **Unsplash** (for free images)
+- Google Fonts (Space Grotesk, Inter)
 
 ---
 
-## 📸 Preview
+## About
 
-<img width="495" height="800" alt="ss" src="https://github.com/user-attachments/assets/3ec0e9cc-0643-4892-97b8-6b8b49595a4c" />
+Freelance web developer based in India, currently taking on small projects — landing pages, small site fixes, and simple interactive features.
 
-*
-
----
-
-
-
-👉 [View on GitHub Pages](https://yourusername.github.io/your-repo-name/)
-
----
-
-
+Contact: [aniket07bhattacharya@gmail.com](mailto:aniket07bhattacharya@gmail.com)
+GitHub: [github.com/Anik3t07](https://github.com/Anik3t07)
